@@ -1,0 +1,13 @@
+.idea/
+.vscode/
+.DS_Store
+.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+*.json
+!pokedex_agent/eval_set.json
+cache/
+logs/
+*.log

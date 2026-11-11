@@ -1,0 +1,17 @@
+  services:
+    postgres:
+      image: postgres:16-alpine
+      container_name: pokeapi_postgres
+      restart: unless-stopped
+      environment:
+        POSTGRES_USER: pokeuser
+        POSTGRES_PASSWORD: pokepassword
+        POSTGRES_DB: pokedex
+      ports:
+        - "5432:5432"
+      volumes:
+        - pgdata:/var/lib/postgresql/data
+        - ./sql/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql
+
+  volumes:
+    pgdata:
